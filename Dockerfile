@@ -2,7 +2,7 @@ FROM openjdk:8-jdk-alpine
 ARG VERSION=0.13.2
 
 RUN apk add --no-cache wget unzip lsof procps net-tools bash bind-tools \
-    && wget https://dlcdn.apache.org/iotdb/$VERSION/apache-iotdb-$VERSION-all-bin.zip \
+    && wget https://archive.apache.org/dist/iotdb/$VERSION/apache-iotdb-$VERSION-all-bin.zip \
     && unzip apache-iotdb-$VERSION-all-bin.zip \
     && rm apache-iotdb-$VERSION-all-bin.zip \
     && mv apache-iotdb-$VERSION-all-bin /iotdb
