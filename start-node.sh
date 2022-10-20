@@ -95,6 +95,7 @@ launch_service()
 IPS=$(nslookup "$SERVICE_NAME" | grep Address | awk '{print $2":9003"}' | sed -n '1!p')
 SEED_NODES=$(echo $IPS | tr ' ' ',')
 sed -i "s/seed_nodes/seed_nodes=$SEED_NODES/g" "$IOTDB_CONF"/iotdb-cluster.properties
+sleep 10s
 
 # Start up the service
 launch_service "$classname"
