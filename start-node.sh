@@ -93,7 +93,7 @@ launch_service()
 
 # Used Rainbond
 while true; do
-    if nslookup "$SERVICE_NAME" | grep Address | awk '{print $2":9003"}' | sed -n '1!p' | wc -l == 3; then
+    if [[ $(nslookup "$SERVICE_NAME" | grep Address | awk '{print $2":9003"}' | sed -n '1!p' | wc -l) == 3 ]]; then
       break
     fi
 done
