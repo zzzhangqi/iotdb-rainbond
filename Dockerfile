@@ -11,6 +11,7 @@ COPY iotdb-cluster.properties /iotdb/conf/iotdb-cluster.properties
 COPY iotdb-engine.properties /iotdb/conf/iotdb-engine.properties
 COPY iotdb-env.sh /iotdb/conf/iotdb-env.sh
 
+ENV IOTDB_CONF=/iotdb/conf
 WORKDIR /iotdb
 
 EXPOSE 6667 31999 8181
