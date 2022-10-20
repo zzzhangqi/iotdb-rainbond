@@ -265,4 +265,4 @@ echo "If you want to change this configuration, please check conf/iotdb-env.sh(U
 # Used Rainbond
 IPS=$(nslookup "$SERVICE_NAME" | grep Address | awk '{print $2":9003"}' | sed -n '1!p')
 SEED_NODES=$(echo $IPS | tr ' ' ',')
-sed -i "s/seed_nodes/seed_nodes=$SEED_NODES/g" "$IOTDB_CONF"/iotdb-cluster.properties
+sed -i "s/seed_nodes=/seed_nodes=$SEED_NODES/g" "$IOTDB_CONF"/iotdb-cluster.properties
