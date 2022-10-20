@@ -10,6 +10,7 @@ RUN apk add --no-cache wget unzip lsof procps net-tools bash bind-tools \
 COPY iotdb-cluster.properties /iotdb/conf/iotdb-cluster.properties
 COPY iotdb-engine.properties /iotdb/conf/iotdb-engine.properties
 COPY iotdb-env.sh /iotdb/conf/iotdb-env.sh
+COPY start-node.sh /iotdb/sbin/start-node.sh
 
 ENV IOTDB_CONF=/iotdb/conf
 WORKDIR /iotdb
